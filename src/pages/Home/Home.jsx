@@ -1,5 +1,17 @@
+import { useEffect } from 'react';
+import useAuth from '../../hook/useAuth';
+
 const Home = () => {
-  return <div>Home</div>;
+	const { login } = useAuth();
+
+	useEffect(() => {
+		login({
+			email: 'eduardo@gmail.com',
+			password: 'Qwerty1#!',
+		});
+	}, []);
+
+	return <div>Home</div>;
 };
 
 export default Home;
